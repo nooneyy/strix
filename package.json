@@ -23,6 +23,8 @@
     "electron-reloader": "^1.0.1"
   },
   "dependencies": {
+    "bulma": "^0.9.1",
+    "bulma-start": "0.0.4",
     "electron-squirrel-startup": "^1.0.0"
   },
   "config": {
