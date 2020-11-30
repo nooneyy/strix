@@ -1,27 +1,27 @@
-const { app, BrowserWindow } = require('electron')
-
+const { app, shell, BrowserWindow } = require('electron')
 try {
     require('electron-reloader')(module)
 } catch (_) {}
 
 function createWindow () {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1200,
+    height: 700,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: true
     }
   })
 
   win.loadFile('index.html')
 }
 
+
+
 app.whenReady().then(createWindow)
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
     app.quit()
-  }
 })
 
 app.on('activate', () => {
@@ -29,3 +29,4 @@ app.on('activate', () => {
     createWindow()
   }
 })
+
